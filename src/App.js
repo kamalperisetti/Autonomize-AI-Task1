@@ -13,6 +13,7 @@ function App() {
   const [todoItem, setTodoItem] = useState("")
   const [count, setCount] = useState("Add a todo")
   const [editItemId, setEditItemId] = useState(null);
+  const [editCount, setEditCount] = useState(0)
  
  
   useEffect(() => {
@@ -40,14 +41,18 @@ function App() {
     
   }
 
-  const onClickingDelete = (id) => {
+  const onClickingDelete = (id, text) => {
     const filterdTodo = todo.filter((each) => each.id !== id)
-    console.log(filterdTodo.length)
-    const countvalue = filterdTodo.filter((each) => (
-      each.text === todo.text
-    ))
     setTodo(filterdTodo)
-    setCount("Add a todo")
+    const counterDecrease = filterdTodo.filter((each) => (
+      each.text === text
+    ))
+    console.log(counterDecrease.length)
+    if(counterDecrease.length > 0){
+      setCount(`${text} ${counterDecrease.length}`)
+    }else{
+      setCount("Add a todo")
+    }
   }
 
   const handleEdit = (id, newText) => {
@@ -57,7 +62,8 @@ function App() {
       }
       return each;
     });
-
+    setEditCount((prevState) => prevState + 1)
+    console.log(editCount)
     setTodo(updatedTodo);
     setEditItemId(null);
   };
@@ -96,9 +102,9 @@ function App() {
               </>
             ) : (
               <>
-                <p>{each.text}</p>  
+                <p>{`${each.text} (Updated ${editCount} Times)`}</p>  
                   <div><TiPencil  className='pencil' onClick={() => setEditItemId(each.id)}/>
-                  <RxCross1 className='cross' onClick={() => onClickingDelete(each.id)}/>
+                  <RxCross1 className='cross' onClick={() => onClickingDelete(each.id, each.text)}/>
                   </div>
               </>
             )}
