@@ -82,3 +82,101 @@ p{
   border-radius: 10px;
 
 }
+.updated-text{
+  font-size: 25px;
+}
+
+@media screen and (max-width:768px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+    height: 100vh;
+    overflow: auto;
+    background-color: #45475a;
+  }
+     
+  /*background-color:rgb(74, 73, 73);*/
+    
+  
+  .input{
+    width: 60%;
+    height: 8px;
+    padding: 15px;
+    border-radius: 10px;
+    border-width: 0px;
+    font-size: 15px;
+    margin-left: 40px;
+  }
+  
+  .addBtn{
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    margin-top:5px;
+    background-color: rgb(98, 115, 164);
+    border-width: 0px;
+    margin-left: 40px;
+    font-size: 12px;
+  }
+  .todo-item{
+    background-color: rgb(98, 115, 164);
+    display: flex;
+    border-radius: 10px;
+    list-style-type: none;
+    color: #ffffff;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+  }
+  ul{
+    width: 60%;
+  }
+  .pencil{
+    color: #ffffff;
+    margin: 5px;
+    font-size: 15px;
+  }
+  .cross{
+    color: rgb(203, 6, 6);
+    margin: 5px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  h1{
+    text-align: center;
+    color: #ffffff;
+    font-size: 35px;
+  }
+  p{
+    padding: 20px;
+    font-size: 25px;
+  }
+  .editsearch{
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    height: 8px;
+    border-width: 0px;
+    margin-left: 5px;
+    font-size: 10px;
+    
+  }
+  .updated-text{
+    font-size: 13px;
+    width: 190px;
+  }
+  .save{
+    border-width: 0px;
+    padding: 8px;
+    background-color: rgb(3, 44, 57);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 10px;  
+  }
+}

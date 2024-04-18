@@ -63,11 +63,11 @@ function App() {
       return each;
     });
     setEditCount((prevState) => prevState + 1)
-    console.log(editCount)
     setTodo(updatedTodo);
     setEditItemId(null);
   };
 
+  
   return (
     <div className='container'>
       <form onSubmit = {handlingForm} className='form'>
@@ -102,7 +102,7 @@ function App() {
               </>
             ) : (
               <>
-                <p>{`${each.text} (Updated ${editCount} Times)`}</p>  
+                <p className='updated-text'>{`${each.text} (Updated ${editCount} Times)`}</p>  
                   <div><TiPencil  className='pencil' onClick={() => setEditItemId(each.id)}/>
                   <RxCross1 className='cross' onClick={() => onClickingDelete(each.id, each.text)}/>
                   </div>
